@@ -5,14 +5,14 @@ import Col from 'react-bootstrap/Col';
 
 const Stat = (props) => {
     const changeHandler = (event) => {
-        props.dispatcher({ type: 'stat', index: props.index, value: event.target.value });
+        props.dispatcher({ type: props.status, value: event.target.value });
     }
 
     return (
         <Row>
-            <Col><Form.Label>{props.status}</Form.Label></Col>
+            <Col><Form.Label>{props.display}</Form.Label></Col>
             <Col><Form.Control type="number" className="statinput" onChange={changeHandler} value={props.value} /></Col>
-            <Col>+5</Col>
+            <Col>{Math.floor((props.value - 10)/2)}</Col>
         </Row>
     );
 }

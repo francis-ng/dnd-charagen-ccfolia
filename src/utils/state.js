@@ -1,27 +1,50 @@
+import classes from '../data/classes';
+
 function reducer(state, action) {
     switch (action.type) {
-        case 'stat':
-            const newParams = state.data.params.map((el, i) => {
-                if (i === action.index) return { ...el, value: action.value };
-                else return el;
-            });
-            const profBonus = Math.floor((action.value - 10) / 2);
-            const sign = profBonus > 0 ? '+' : '-';
-            newParams[state.index + 6].value = sign + Math.abs(profBonus);
+        case 'Strength':
             return {
                 ...state,
-                data: {
-                    ...state.data,
-                    params: newParams
-                }
+                str: parseInt(action.value)
+            };
+        case 'Dexterity':
+            return {
+                ...state,
+                dex: parseInt(action.value)
+            };
+        case 'Constitution':
+            return {
+                ...state,
+                con: parseInt(action.value)
+            };
+        case 'Intelligence':
+            return {
+                ...state,
+                int: parseInt(action.value)
+            };
+        case 'Wisdom':
+            return {
+                ...state,
+                wis: parseInt(action.value)
+            };
+        case 'Charisma':
+            return {
+                ...state,
+                cha: parseInt(action.value)
+            };
+        case 'name':
+            return {
+                ...state,
+                name: parseInt(action.value)
+            };
+        case 'class':
+            return {
+                ...state,
+                class: classes[action.value]
             }
         default:
             throw new Error('Unknown action type');
     }
-}
-
-function setStat(state, stat) {
-
 }
 
 export {

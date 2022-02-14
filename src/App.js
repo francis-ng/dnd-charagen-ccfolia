@@ -4,40 +4,66 @@ import './styles/App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 import Stat from './components/Stat';
 import { reducer } from './utils/state';
+import tr from './utils/translator'
 
 
 const App = (props) => {
   const initialState = {
-      kind: "character",
-      data: {
-          name: "",
-          initiative: 0,
-          externalUrl: "",
-          iconUrl: null,
-          commands: "",
-          status: [
-              {
-                  label: "",
-                  value: 0,
-                  max: 0
-              }
-          ],
-          params: [
-            { label: "STR", value: "1" },
-            { label: "DEX", value: "1" },
-            { label: "CON", value: "1" },
-            { label: "INT", value: "1" },
-            { label: "WIS", value: "1" },
-            { label: "CHA", value: "1" },
-            { label: "StrProf", value: "0" },
-            { label: "DexProf", value: "0" },
-            { label: "ConProf", value: "0" },
-            { label: "IntProf", value: "0" },
-            { label: "WisProf", value: "0" },
-            { label: "ChaProf", value: "0" }
-          ]
+      lang: 'en',
+      name: '',
+      str: 3,
+      dex: 3,
+      con: 3,
+      int: 3,
+      wis: 3,
+      cha: 3,
+      race: {
+        name: '',
+        str: 0,
+        dex: 0,
+        con: 0,
+        int: 0,
+        wis: 0,
+        cha: 0,
+        abilities: '',
+        proficiencies: '',
+        armorweapon: ''
+      },
+      background: {
+        name: '',
+        skills: '',
+        wealth: '',
+        equipment: ''
+      },
+      class: {
+        name: '',
+        proficiencybonus: 0,
+        hitdice: '',
+        savingthrows: '',
+        armorweapon: ''
+      },
+      skills: {
+        acrobatics: 0,
+        animalhandling: 0,
+        arcana: 0,
+        athletics: 0,
+        deception: 0,
+        history: 0,
+        insight: 0,
+        intimidation: 0,
+        investigation: 0,
+        medicine: 0,
+        nature: 0,
+        perception: 0,
+        performance: 0,
+        persuasion: 0,
+        religion: 0,
+        sleightofhand: 0,
+        stealth: 0,
+        survival: 0
       }
   }
 
@@ -46,40 +72,74 @@ const App = (props) => {
   return (
     <div className="App">
       <header className="App-header">
-        <Container>
+        <Container fluid>
+          <Row>
+            <Col med={6} sm={12}>
+            <Form.Control type="text" placeholder="Name"
+                onChange={(ev) => dispatch({ type: "name", value: ev.target.value })}
+                value={state.name} />
+            </Col>
+            <Col med={6} sm={6}>
+              <Row>
+                <Col med={6} sm={12}>
+                  <Form.Select aria-label="Race">
+                    <option>{tr('Race', state.lang)}</option>
+                  </Form.Select>
+                </Col>
+                <Col med={6} sm={12}>
+                  <Form.Select aria-label="Class"
+                    onChange={(ev) => dispatch({ type: "class", value: ev.target.value })}>
+                  <option>{tr('Class', state.lang)}</option>
+                  <option value="Barbarian">{tr('Barbarian', state.lang)}</option>
+                  <option value="Bard">{tr('Bard', state.lang)}</option>
+                  <option value="Cleric">{tr('Cleric', state.lang)}</option>
+                  <option value="Druid">{tr('Druid', state.lang)}</option>
+                  <option value="Fighter">{tr('Fighter', state.lang)}</option>
+                  <option value="Monk">{tr('Monk', state.lang)}</option>
+                  <option value="Paladin">{tr('Paladin', state.lang)}</option>
+                  <option value="Ranger">{tr('Ranger', state.lang)}</option>
+                  <option value="Rogue">{tr('Rogue', state.lang)}</option>
+                  <option value="Sorcerer">{tr('Sorcerer', state.lang)}</option>
+                  <option value="Warlock">{tr('Warlock', state.lang)}</option>
+                  <option value="Wizard">{tr('Wizard', state.lang)}</option>
+                  </Form.Select>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"STRength"} value={state.data.params[0].value} proficiency={state.data.params[6]} index={0} dispatcher={dispatch} />
+              <Stat status={"Strength"} display={tr('Strength', state.lang)} value={state.str} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"DEXterity"} value={state.data.params[1].value} proficiency={state.data.params[7]} index={1} dispatcher={dispatch} />
+              <Stat status={"Dexterity"} display={tr('Dexterity', state.lang)} value={state.dex} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"CONstitution"} value={state.data.params[2].value} proficiency={state.data.params[8]} index={2} dispatcher={dispatch} />
+              <Stat status={"Constitution"} display={tr('Constitution', state.lang)} value={state.con} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"INTelligence"} value={state.data.params[3].value} proficiency={state.data.params[9]} index={3} dispatcher={dispatch} />
+              <Stat status={"Intelligence"} display={tr('Intelligence', state.lang)} value={state.int} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"WISdom"} value={state.data.params[4].value} proficiency={state.data.params[10]} index={4} dispatcher={dispatch} />
+              <Stat status={"Wisdom"} display={tr('Wisdom', state.lang)} value={state.wis} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>
           <Row>
             <Col sm={2}>
-              <Stat status={"CHArisma"} value={state.data.params[5].value} proficiency={state.data.params[11]} index={5} dispatcher={dispatch} />
+              <Stat status={"Charisma"} display={tr('Charisma', state.lang)} value={state.cha} dispatcher={dispatch} />
             </Col>
             <Col sm={10}></Col>
           </Row>

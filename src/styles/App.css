@@ -37,7 +37,10 @@
   }
 }
 
-.statinput {
+input, select {
   font-size: 24px;
+}
+
+.statinput {
   width: 50px;
 }
