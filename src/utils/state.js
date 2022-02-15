@@ -2,6 +2,11 @@ import classes from '../data/classes';
 
 function reducer(state, action) {
     switch (action.type) {
+        case 'Language':
+            return {
+                ...state,
+                lang: action.value
+            };
         case 'Strength':
             return {
                 ...state,

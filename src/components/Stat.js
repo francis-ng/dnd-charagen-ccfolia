@@ -10,9 +10,9 @@ const Stat = (props) => {
 
     return (
         <Row>
-            <Col><Form.Label>{props.display}</Form.Label></Col>
-            <Col><Form.Control type="number" className="statinput" onChange={changeHandler} value={props.value} /></Col>
-            <Col>{Math.floor((props.value - 10)/2)}</Col>
+            <Col sm={12}><Form.Label>{props.display}</Form.Label></Col>
+            <Col sm={12}><Form.Control type="number" className="statinput" onChange={changeHandler} value={props.value} /></Col>
+            <Col sm={12}>{Math.floor((props.value - 10)/2)}</Col>
         </Row>
     );
 }

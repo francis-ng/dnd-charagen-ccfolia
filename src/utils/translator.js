@@ -44,6 +44,25 @@ const STRINGS = {
     "Sorcerer": { en: "Sorcerer", jp: "ソーサラー" },
     "Warlock": { en: "Warlock", jp: "ウォーロック" },
     "Wizard": { en: "Wizard", jp: "ウィザード" },
+    // Skills
+    "Acrobatics": { en: "Acrobatics (DEX)", jp: "軽業 (DEX)" },
+    "Animal Handling": { en: "Animal Handling (WIS)", jp: "動物使い (WIS)" },
+    "Arcana": { en: "Arcana (INT)", jp: "魔法学 (INT)" },
+    "Athletics": { en: "Athletics (STR)", jp: "運動 (STR)" },
+    "Deception": { en: "Deception (CHA)", jp: "ペテン (CHA)" },
+    "History": { en: "History (INT)", jp: "歴史 (INT)" },
+    "Insight": { en: "Insight (WIS)", jp: "看破 (WIS)" },
+    "Intimidation": { en: "Intimidation (CHA)", jp: "威圧 (CHA)" },
+    "Investigation": { en: "Investigation (INT)", jp: "捜査 (INT)" },
+    "Medicine": { en: "Medicine (WIS)", jp: "医術 (WIS)" },
+    "Nature": { en: "Nature (INT)", jp: "自然 (INT)" },
+    "Perception": { en: "Perception (WIS)", jp: "知覚 (WIS)" },
+    "Performance": { en: "Performance (CHA)", jp: "芸能 (CHA)" },
+    "Persuasion": { en: "Persuasion (CHA)", jp: "説得 (CHA)" },
+    "Religion": { en: "Religion (INT)", jp: "宗教 (INT)" },
+    "Sleight of Hand": { en: "Sleight of Hand (DEX)", jp: "手先の早業 (DEX)" },
+    "Stealth": { en: "Stealth (DEX)", jp: "隠密 (DEX)" },
+    "Survival": { en: "Survival (WIS)", jp: "生存 (WIS)" },
 };
 
 function tr(key, lang) {
