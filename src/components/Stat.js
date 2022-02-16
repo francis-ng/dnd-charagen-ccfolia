@@ -11,8 +11,9 @@ const Stat = (props) => {
     return (
         <Row>
             <Col sm={12}><Form.Label>{props.display}</Form.Label></Col>
-            <Col sm={12}><Form.Control type="number" className="statinput" onChange={changeHandler} value={props.value} /></Col>
-            <Col sm={12}>{Math.floor((props.value - 10)/2)}</Col>
+            <Col sm={12}><Form.Control type="number" className="statinput" onChange={changeHandler} value={props.value} />{' '}
+            <Form.Control type="text" className="statinput" readOnly value={props.racialBonus} /></Col>
+            <Col sm={12}>{Math.floor((props.value + props.racialBonus - 10)/2)}</Col>
         </Row>
     );
 }

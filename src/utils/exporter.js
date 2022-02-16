@@ -26,3 +26,11 @@ const baseState = {
         memo: ""
     }
 };
+
+function exportToClipboard() {
+
+}
+
+export {
+    exportToClipboard
+};

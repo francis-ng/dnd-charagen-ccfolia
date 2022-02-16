@@ -1,4 +1,5 @@
 const STRINGS = {
+    "Output": { en: "Output", jp: "出力" },
     "Race": {
         en: "Race",
         jp: "種族"

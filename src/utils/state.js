@@ -46,7 +46,15 @@ function reducer(state, action) {
             return {
                 ...state,
                 class: classes[action.value]
-            }
+            };
+        case 'skill':
+            return {
+                ...state,
+                skills: {
+                    ...state.skills,
+                    [action.data.skill]: action.data.value
+                }
+            };
         default:
             throw new Error('Unknown action type');
     }

@@ -1,5 +1,4 @@
 import { useReducer } from 'react';
-import logo from './logo.svg';
 import './styles/App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Stat from './components/Stat';
 import Skill from './components/Skill';
 import { reducer } from './utils/state';
+import { exportToClipboard } from './utils/exporter';
 import tr from './utils/translator'
 
 
@@ -76,7 +76,7 @@ const App = (props) => {
       <Container fluid>
         <Row>
           <Col md={4}>
-            <Button variant="primary">Output</Button>
+            <Button variant="primary" onClick={() => exportToClipboard()} >{tr('Output', state.lang)}</Button>
           </Col>
           <Col md={{offset: 4, span: 4}}>
             <Button variant="outline-secondary" onClick={() => dispatch({ type: 'Language', value: 'jp' })}>日本語</Button>{' '}
@@ -121,32 +121,32 @@ const App = (props) => {
         </Row>
         <Row>
           <Col md={4} sm={6}>
-            <Stat status={"Strength"} display={tr('Strength', state.lang)} value={state.str} dispatcher={dispatch} />
-            <Stat status={"Dexterity"} display={tr('Dexterity', state.lang)} value={state.dex} dispatcher={dispatch} />
-            <Stat status={"Constitution"} display={tr('Constitution', state.lang)} value={state.con} dispatcher={dispatch} />
-            <Stat status={"Intelligence"} display={tr('Intelligence', state.lang)} value={state.int} dispatcher={dispatch} />
-            <Stat status={"Wisdom"} display={tr('Wisdom', state.lang)} value={state.wis} dispatcher={dispatch} />
-            <Stat status={"Charisma"} display={tr('Charisma', state.lang)} value={state.cha} dispatcher={dispatch} />
+            <Stat status={"Strength"} display={tr('Strength', state.lang)} value={state.str} racialBonus={state.race.str} dispatcher={dispatch} />
+            <Stat status={"Dexterity"} display={tr('Dexterity', state.lang)} value={state.dex} racialBonus={state.race.dex} dispatcher={dispatch} />
+            <Stat status={"Constitution"} display={tr('Constitution', state.lang)} value={state.con} racialBonus={state.race.con} dispatcher={dispatch} />
+            <Stat status={"Intelligence"} display={tr('Intelligence', state.lang)} value={state.int} racialBonus={state.race.int} dispatcher={dispatch} />
+            <Stat status={"Wisdom"} display={tr('Wisdom', state.lang)} value={state.wis} racialBonus={state.race.wis} dispatcher={dispatch} />
+            <Stat status={"Charisma"} display={tr('Charisma', state.lang)} value={state.cha} racialBonus={state.race.cha} dispatcher={dispatch} />
           </Col>
           <Col md={8} sm={6}>
-            <Skill skill={'Acrobatics'} state={state} />
-            <Skill skill={'Animal Handling'} state={state} />
-            <Skill skill={'Arcana'} state={state} />
-            <Skill skill={'Athletics'} state={state} />
-            <Skill skill={'Deception'} state={state} />
-            <Skill skill={'History'} state={state} />
-            <Skill skill={'Insight'} state={state} />
-            <Skill skill={'Intimidation'} state={state} />
-            <Skill skill={'Investigation'} state={state} />
-            <Skill skill={'Medicine'} state={state} />
-            <Skill skill={'Nature'} state={state} />
-            <Skill skill={'Perception'} state={state} />
-            <Skill skill={'Performance'} state={state} />
-            <Skill skill={'Persuasion'} state={state} />
-            <Skill skill={'Religion'} state={state} />
-            <Skill skill={'Sleight of Hand'} state={state} />
-            <Skill skill={'Stealth'} state={state} />
-            <Skill skill={'Survival'} state={state} />
+            <Skill skill={'Acrobatics'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Animal Handling'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Arcana'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Athletics'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Deception'} state={state} dispatcher={dispatch} />
+            <Skill skill={'History'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Insight'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Intimidation'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Investigation'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Medicine'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Nature'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Perception'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Performance'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Persuasion'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Religion'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Sleight of Hand'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Stealth'} state={state} dispatcher={dispatch} />
+            <Skill skill={'Survival'} state={state} dispatcher={dispatch} />
           </Col>
         </Row>
 

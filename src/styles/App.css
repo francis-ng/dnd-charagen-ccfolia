@@ -18,8 +18,13 @@ input, select {
   margin: 0 auto;
 }
 
+.output-btn {
+  width: 8em;
+}
+
 .statinput {
   width: 50px;
+  display: inline-block;
 }
 
 .skillbonus {
