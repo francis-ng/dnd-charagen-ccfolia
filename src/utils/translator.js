@@ -64,6 +64,7 @@ const STRINGS = {
     "Sleight of Hand": { en: "Sleight of Hand (DEX)", jp: "手先の早業 (DEX)" },
     "Stealth": { en: "Stealth (DEX)", jp: "隠密 (DEX)" },
     "Survival": { en: "Survival (WIS)", jp: "生存 (WIS)" },
+    "JSONOutput": { en: "JSON data copied to clipboard", jp: "データがコピーされました" }
 };
 
 function tr(key, lang) {

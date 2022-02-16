@@ -20,18 +20,20 @@ const SKILL_STAT_MAP = {
 }
 
 
+function calculateAbilityBonus(stat, state) {
+    return Math.floor((state[stat] + state.race[stat] - 10 ) / 2);
+}
+
 function calculateSkillBonuses(skill, state, dispatcher) {
     const key = skill.replace(' ', '').toLowerCase();
     const assocStat = SKILL_STAT_MAP[key];
-    const baseStat = state[assocStat];
-    const raceBonus = state.race[assocStat];
 
     const profString = state.race.proficiencies;
     const proficiencies = profString.split(',');
     for (let proficiency of proficiencies) {
         proficiency = proficiency.replace(' ', '').toLowerCase();
         if (proficiency === skill) {
-            const bonus = Math.floor((baseStat + raceBonus - 10 ) / 2);
+            const bonus = calculateAbilityBonus(assocStat, state);
             dispatcher({ type: 'skill', data: { skill: proficiency, value: bonus } });
         }
     }

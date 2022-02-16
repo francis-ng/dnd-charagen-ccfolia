@@ -1,6 +1,8 @@
-import { useReducer } from 'react';
+import { useState, useReducer } from 'react';
 import './styles/App.css';
 import Container from 'react-bootstrap/Container';
+import ToastContainer from 'react-bootstrap/ToastContainer';
+import Toast from 'react-bootstrap/Toast';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -71,12 +73,21 @@ const App = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const [showClipboardMsg, setShowClipboardMsg] = useState(false);
+
   return (
     <div className="App">
+      <ToastContainer position={'top-center'}>
+        <Toast bg={'info'} show={showClipboardMsg} onClose={() => setShowClipboardMsg(false)} delay={3000} autohide>
+          <Toast.Header>
+            <span class="me-auto">{tr("JSONOutput", state.lang)}</span>
+          </Toast.Header>
+        </Toast>
+      </ToastContainer>
       <Container fluid>
         <Row>
           <Col md={4}>
-            <Button variant="primary" onClick={() => exportToClipboard()} >{tr('Output', state.lang)}</Button>
+            <Button variant="primary" onClick={() => exportToClipboard(setShowClipboardMsg)} >{tr('Output', state.lang)}</Button>
           </Col>
           <Col md={{offset: 4, span: 4}}>
             <Button variant="outline-secondary" onClick={() => dispatch({ type: 'Language', value: 'jp' })}>日本語</Button>{' '}

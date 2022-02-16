@@ -27,8 +27,8 @@ const baseState = {
     }
 };
 
-function exportToClipboard() {
-
+function exportToClipboard(showMsg) {
+    showMsg(true);
 }
 
 export {
