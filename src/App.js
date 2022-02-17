@@ -117,7 +117,7 @@ const App = (props) => {
       <Container fluid>
         <Row>
           <Col md={4}>
-            <Button className="mb-2" variant="primary" onClick={() => exportToClipboard(setShowClipboardMsg)} >{tr('Output', state.lang)}</Button>
+            <Button className="mb-2 output-btn" variant="primary" onClick={() => exportToClipboard(setShowClipboardMsg)} >{tr('Output', state.lang)}</Button>
           </Col>
           <Col md={{offset: 4, span: 4}}>
             <Button variant="outline-secondary" onClick={() => dispatch({ type: 'Language', value: 'jp' })}>日本語</Button>{' '}

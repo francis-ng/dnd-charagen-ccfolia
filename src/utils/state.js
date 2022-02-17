@@ -87,7 +87,11 @@ function reducer(state, action) {
                 }
             };
         case 'race':
-            skillUpdate = calculateSkillBonuses(state.skills, state.character, races[action.value], state.class, state.background);
+            const newRace = races[action.value];
+            if (!newRace) {
+                return state;
+            }
+            skillUpdate = calculateSkillBonuses(state.skills, state.character, newRace, state.class, state.background);
             return {
                 ...state,
                 race: races[action.value],
@@ -100,6 +104,9 @@ function reducer(state, action) {
             };
         case 'background':
             const newBackground = backgrounds[action.value];
+            if (!newBackground) {
+                return state;
+            }
             skillUpdate = calculateSkillBonuses(state.skills, state.character, state.race, state.class, newBackground);
             return {
                 ...state,
