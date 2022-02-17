@@ -1,6 +1,11 @@
 import classes from '../data/classes';
+import races from '../data/races';
+import backgrounds from '../data/backgrounds';
+import { calculateSkillBonuses } from '../utils/calculators';
 
 function reducer(state, action) {
+    let updatedChar = {};
+    let skillUpdate = null;
     switch (action.type) {
         case 'Language':
             return {
@@ -8,52 +13,98 @@ function reducer(state, action) {
                 lang: action.value
             };
         case 'Strength':
-            return {
-                ...state,
+            updatedChar = {
+                ...state.character,
                 str: parseInt(action.value)
             };
-        case 'Dexterity':
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
             return {
                 ...state,
+                character: updatedChar,
+                skills: skillUpdate
+            };
+        case 'Dexterity':
+            updatedChar = {
+                ...state.character,
                 dex: parseInt(action.value)
             };
-        case 'Constitution':
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
             return {
                 ...state,
+                character: updatedChar,
+                skills: skillUpdate
+            };
+        case 'Constitution':
+            updatedChar = {
+                ...state.character,
                 con: parseInt(action.value)
             };
-        case 'Intelligence':
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
             return {
                 ...state,
+                character: updatedChar,
+                skills: skillUpdate
+            };
+        case 'Intelligence':
+            updatedChar = {
+                ...state.character,
                 int: parseInt(action.value)
             };
-        case 'Wisdom':
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
             return {
                 ...state,
+                character: updatedChar,
+                skills: skillUpdate
+            };
+        case 'Wisdom':
+            updatedChar = {
+                ...state.character,
                 wis: parseInt(action.value)
             };
-        case 'Charisma':
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
             return {
                 ...state,
+                character: updatedChar,
+                skills: skillUpdate
+            };
+        case 'Charisma':
+            updatedChar = {
+                ...state.character,
                 cha: parseInt(action.value)
+            };
+            skillUpdate = calculateSkillBonuses(state.skills, updatedChar, state.race, state.class, state.background);
+            return {
+                ...state,
+                character: updatedChar,
+                skills: skillUpdate
             };
         case 'name':
             return {
                 ...state,
-                name: parseInt(action.value)
+                character: {
+                    ...state.character,
+                    name: action.value
+                }
+            };
+        case 'race':
+            skillUpdate = calculateSkillBonuses(state.skills, state.character, races[action.value], state.class, state.background);
+            return {
+                ...state,
+                race: races[action.value],
+                skills: skillUpdate
             };
         case 'class':
             return {
                 ...state,
                 class: classes[action.value]
             };
-        case 'skill':
+        case 'background':
+            const newBackground = backgrounds[action.value];
+            skillUpdate = calculateSkillBonuses(state.skills, state.character, state.race, state.class, newBackground);
             return {
                 ...state,
-                skills: {
-                    ...state.skills,
-                    [action.data.skill]: action.data.value
-                }
+                background: newBackground,
+                skills: skillUpdate
             };
         default:
             throw new Error('Unknown action type');

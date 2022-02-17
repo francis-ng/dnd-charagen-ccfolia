@@ -14,6 +14,13 @@
   color: #61dafb;
 }
 
+header {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  font-size: 1.5em;
+}
+
 input, select {
   margin: 0 auto;
 }
@@ -23,7 +30,7 @@ input, select {
 }
 
 .statinput {
-  width: 50px;
+  width: 60px;
   display: inline-block;
 }
 

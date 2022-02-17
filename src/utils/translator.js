@@ -1,13 +1,6 @@
 const STRINGS = {
     "Output": { en: "Output", jp: "出力" },
-    "Race": {
-        en: "Race",
-        jp: "種族"
-    },
-    "Class": {
-        en: "Class",
-        jp: "クラス"
-    },
+    // Stats
     "Strength": {
         en: "Strength",
         jp: "筋力(STR)"
@@ -32,7 +25,19 @@ const STRINGS = {
         en: "Charisma",
         jp: "魅力(CHA)"
     },
+    // Races
+    "Race": { en: "Race", jp: "種族" },
+    "Dragonborn": { en: "Dragonborn", jp: "ドラゴンボーン" },
+    "Dwarf": { en: "Dwarf", jp: "ドワーフ" },
+    "Elf": { en: "Elf", jp: "エルフ" },
+    "Gnome": { en: "Gnome", jp: "ノーム" },
+    "HalfElf": { en: "Half-Elf", jp: "ハーフエルフ" },
+    "Halfling": { en: "Halfling", jp: "ハーフリング" },
+    "HalfOrc": { en: "Half-Orc", jp: "ハーフオーク" },
+    "Human": { en: "Human", jp: "ヒューマン" },
+    "Tiefling": { en: "Tiefling", jp: "ティーフリング" },
     // Classes
+    "Class": { en: "Class", jp: "クラス" },
     "Barbarian": { en: "Barbarian", jp: "バーバリアン" },
     "Bard": { en: "Bard", jp: "バード" },
     "Cleric": { en: "Cleric", jp: "クレリック" },
@@ -45,6 +50,24 @@ const STRINGS = {
     "Sorcerer": { en: "Sorcerer", jp: "ソーサラー" },
     "Warlock": { en: "Warlock", jp: "ウォーロック" },
     "Wizard": { en: "Wizard", jp: "ウィザード" },
+    // Backgrounds
+    "Background": { en: "Background", jp: "背景" },
+    "Acolyte": { en: "Acolyte", jp: "" },
+    "Charlatan": { en: "Charlatan", jp: "" },
+    "Criminal": { en: "Criminal", jp: "" },
+    "Entertainer": { en: "Entertainer", jp: "" },
+    "FolkHero": { en: "Folk Hero", jp: "" },
+    "Gladiator": { en: "Gladiator", jp: "" },
+    "GuildArtisan": { en: "Guild Artisan", jp: "" },
+    "Hermit": { en: "Hermit", jp: "" },
+    "Knight": { en: "Knight", jp: "" },
+    "Noble": { en: "Noble", jp: "" },
+    "Outlander": { en: "Outlander", jp: "" },
+    "Pirate": { en: "Pirate", jp: "" },
+    "Sage": { en: "Sage", jp: "" },
+    "Sailor": { en: "Sailor", jp: "" },
+    "Soldier": { en: "Soldier", jp: "" },
+    "Urchin": { en: "Urchin", jp: "" },
     // Skills
     "Acrobatics": { en: "Acrobatics (DEX)", jp: "軽業 (DEX)" },
     "Animal Handling": { en: "Animal Handling (WIS)", jp: "動物使い (WIS)" },

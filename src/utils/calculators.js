@@ -20,25 +20,52 @@ const SKILL_STAT_MAP = {
 }
 
 
-function calculateAbilityBonus(stat, state) {
-    return Math.floor((state[stat] + state.race[stat] - 10 ) / 2);
+function calculateAbilityBonus(stat, character, race) {
+    return Math.floor((character[stat] + race[stat] - 10 ) / 2);
 }
 
-function calculateSkillBonuses(skill, state, dispatcher) {
-    const key = skill.replace(' ', '').toLowerCase();
-    const assocStat = SKILL_STAT_MAP[key];
+function calculateSkillBonuses(skills, character, race, jobclass, background) {
+    const result = {
+        acrobatics: 0,
+        animalhandling: 0,
+        arcana: 0,
+        athletics: 0,
+        deception: 0,
+        history: 0,
+        insight: 0,
+        intimidation: 0,
+        investigation: 0,
+        medicine: 0,
+        nature: 0,
+        perception: 0,
+        performance: 0,
+        persuasion: 0,
+        religion: 0,
+        sleightofhand: 0,
+        stealth: 0,
+        survival: 0
+    };
+    for (const key in skills) {
+        if (skills.hasOwnProperty(key)) {
+            const assocStat = SKILL_STAT_MAP[key];
 
-    const profString = state.race.proficiencies;
-    const proficiencies = profString.split(',');
-    for (let proficiency of proficiencies) {
-        proficiency = proficiency.replace(' ', '').toLowerCase();
-        if (proficiency === skill) {
-            const bonus = calculateAbilityBonus(assocStat, state);
-            dispatcher({ type: 'skill', data: { skill: proficiency, value: bonus } });
+            const profString = background.skills;
+            const proficiencies = profString.split(',');
+
+            for (let proficiency of proficiencies) {
+                proficiency = proficiency.replace(' ', '').toLowerCase();
+                let bonus = calculateAbilityBonus(assocStat, character, race);
+                if (proficiency === key) {
+                    bonus += jobclass.proficiencybonus;
+                }
+                result[key] = bonus;
+            }
         }
     }
+    return result;
 }
 
 export {
+    SKILL_STAT_MAP,
     calculateSkillBonuses
 };
