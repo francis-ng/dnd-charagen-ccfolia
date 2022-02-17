@@ -8,8 +8,8 @@ const Skill = (props) => {
 
     return (
         <Row className='pt-2'>
-            <Col><Form.Control type="string" className="skillbonus" readOnly value={props.value} /></Col>
-            <Col>{tr(props.skill, props.lang)}</Col>
+            <Col md={{offset:3, span:4}} sm={5}><Form.Control type="string" className="skillbonus" readOnly value={props.value} /></Col>
+            <Col md={4} sm={6}>{tr(props.skill, props.lang)}</Col>
         </Row>
     );
 }

@@ -37,4 +37,5 @@ input, select {
 .skillbonus {
   width: 50px;
   margin-right: 0;
+  display: inline-block;
 }
