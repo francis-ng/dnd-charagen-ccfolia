@@ -70,7 +70,7 @@ const STRINGS = {
     "Urchin": { en: "Urchin", jp: "野良人" },
     // Skills
     "Acrobatics": { en: "Acrobatics (DEX)", jp: "軽業 (DEX)" },
-    "Animal Handling": { en: "Animal Handling (WIS)", jp: "動物使い (WIS)" },
+    "AnimalHandling": { en: "Animal Handling (WIS)", jp: "動物使い (WIS)" },
     "Arcana": { en: "Arcana (INT)", jp: "魔法学 (INT)" },
     "Athletics": { en: "Athletics (STR)", jp: "運動 (STR)" },
     "Deception": { en: "Deception (CHA)", jp: "ペテン (CHA)" },
@@ -84,7 +84,7 @@ const STRINGS = {
     "Performance": { en: "Performance (CHA)", jp: "芸能 (CHA)" },
     "Persuasion": { en: "Persuasion (CHA)", jp: "説得 (CHA)" },
     "Religion": { en: "Religion (INT)", jp: "宗教 (INT)" },
-    "Sleight of Hand": { en: "Sleight of Hand (DEX)", jp: "手先の早業 (DEX)" },
+    "SleightofHand": { en: "Sleight of Hand (DEX)", jp: "手先の早業 (DEX)" },
     "Stealth": { en: "Stealth (DEX)", jp: "隠密 (DEX)" },
     "Survival": { en: "Survival (WIS)", jp: "生存 (WIS)" },
     "JSONOutput": { en: "JSON data copied to clipboard", jp: "データがコピーされました" }

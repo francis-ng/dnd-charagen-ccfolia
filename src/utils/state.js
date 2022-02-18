@@ -98,6 +98,9 @@ function reducer(state, action) {
                 skills: skillUpdate
             };
         case 'class':
+            if (!classes[action.value]) {
+                return state;
+            }
             return {
                 ...state,
                 class: classes[action.value]

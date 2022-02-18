@@ -39,7 +39,8 @@ const App = (props) => {
         cha: 0,
         abilities: '',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 0
       },
       background: {
         name: '',
@@ -117,7 +118,7 @@ const App = (props) => {
       <Container fluid>
         <Row>
           <Col md={4}>
-            <Button className="mb-2 output-btn" variant="primary" onClick={() => exportToClipboard(setShowClipboardMsg)} >{tr('Output', state.lang)}</Button>
+            <Button className="mb-2 output-btn" variant="primary" onClick={() => exportToClipboard(state, setShowClipboardMsg)} >{tr('Output', state.lang)}</Button>
           </Col>
           <Col md={{offset: 4, span: 4}}>
             <Button variant="outline-secondary" onClick={() => dispatch({ type: 'Language', value: 'jp' })}>日本語</Button>{' '}
@@ -165,7 +166,7 @@ const App = (props) => {
           </Col>
           <Col md={8} sm={12}>
             <Skill skill={'Acrobatics'} lang={state.lang} value={state.skills.acrobatics} />
-            <Skill skill={'Animal Handling'} lang={state.lang} value={state.skills.animalhandling} />
+            <Skill skill={'AnimalHandling'} lang={state.lang} value={state.skills.animalhandling} />
             <Skill skill={'Arcana'} lang={state.lang} value={state.skills.arcana} />
             <Skill skill={'Athletics'} lang={state.lang} value={state.skills.athletics} />
             <Skill skill={'Deception'} lang={state.lang} value={state.skills.deception} />
@@ -179,7 +180,7 @@ const App = (props) => {
             <Skill skill={'Performance'} lang={state.lang} value={state.skills.performance} />
             <Skill skill={'Persuasion'} lang={state.lang} value={state.skills.persuasion} />
             <Skill skill={'Religion'} lang={state.lang} value={state.skills.religion} />
-            <Skill skill={'Sleight of Hand'} lang={state.lang} value={state.skills.sleightofhand} />
+            <Skill skill={'SleightofHand'} lang={state.lang} value={state.skills.sleightofhand} />
             <Skill skill={'Stealth'} lang={state.lang} value={state.skills.stealth} />
             <Skill skill={'Survival'} lang={state.lang} value={state.skills.survival} />
           </Col>

@@ -7,9 +7,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 1,
-        abilities: '',
+        abilities: 'Draconic Ancestry, Breath Weapon, Damage Resistance',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
     Dwarf: {
         name: 'Dwarf',
@@ -19,9 +20,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: '',
+        abilities: 'Darkvision, Dwarven Resilience, Dwarven Combat Training, Stonecunning',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 5
     },
     Elf: {
         name: 'Elf',
@@ -31,9 +33,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: '',
+        abilities: 'Darkvision, Keen Senses, Fey Ancestry, Trance',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
     Gnome: {
         name: 'Gnome',
@@ -43,9 +46,10 @@ const Races = {
         int: 2,
         wis: 0,
         cha: 0,
-        abilities: '',
+        abilities: 'Darkvision, Gnome Cunning',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 5
     },
     HalfElf: {
         name: 'HalfElf',
@@ -55,9 +59,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 2,
-        abilities: '',
+        abilities: 'Darkvision, Fey Ancestry, Skill Versatility',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
     Halfling: {
         name: 'Halfling',
@@ -67,9 +72,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: '',
+        abilities: 'Lucky, Brave, Halfling Nimbleness',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 5
     },
     HalfOrc: {
         name: 'HalfOrc',
@@ -79,9 +85,10 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: '',
+        abilities: 'Darkvision, Menacing, Relentless Endurance, Savage Attacks',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
     Human: {
         name: 'Human',
@@ -91,9 +98,10 @@ const Races = {
         int: 1,
         wis: 1,
         cha: 1,
-        abilities: '',
+        abilities: 'Extra Language',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
     Tiefling: {
         name: 'Tiefling',
@@ -103,9 +111,10 @@ const Races = {
         int: 1,
         wis: 0,
         cha: 2,
-        abilities: '',
+        abilities: 'Darkvision, Hellish Resistance, Infernal Legacy',
         proficiencies: '',
-        armorweapon: ''
+        armorweapon: '',
+        speed: 6
     },
 };
 
