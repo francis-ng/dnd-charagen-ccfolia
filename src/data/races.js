@@ -20,9 +20,9 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: 'Darkvision, Dwarven Resilience, Dwarven Combat Training, Stonecunning',
-        proficiencies: '',
-        armorweapon: '',
+        abilities: 'Darkvision, Dwarven Resilience, Dwarven Combat Training',
+        proficiencies: 'Poison ST, Smith tools/Brewer supplies/Mason tools, History (stonework) x2',
+        armorweapon: 'Battleaxe, Handaxe, Throwing hammer, Warhammer',
         speed: 5
     },
     Elf: {
@@ -33,8 +33,8 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: 'Darkvision, Keen Senses, Fey Ancestry, Trance',
-        proficiencies: '',
+        abilities: 'Darkvision, Trance, Charmed ST advantage, Sleep immunity',
+        proficiencies: 'Perception',
         armorweapon: '',
         speed: 6
     },
@@ -46,7 +46,7 @@ const Races = {
         int: 2,
         wis: 0,
         cha: 0,
-        abilities: 'Darkvision, Gnome Cunning',
+        abilities: 'Darkvision, Int-Wis-Cha ST a/st magic advantage',
         proficiencies: '',
         armorweapon: '',
         speed: 5
@@ -59,7 +59,7 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 2,
-        abilities: 'Darkvision, Fey Ancestry, Skill Versatility',
+        abilities: 'Darkvision, 2 skill proficiencies, Charmed ST advantage, Sleep immunity',
         proficiencies: '',
         armorweapon: '',
         speed: 6
@@ -72,7 +72,7 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: 'Lucky, Brave, Halfling Nimbleness',
+        abilities: 'Lucky, Brave (Frightened ST advantage), Halfling Nimbleness',
         proficiencies: '',
         armorweapon: '',
         speed: 5
@@ -85,8 +85,8 @@ const Races = {
         int: 0,
         wis: 0,
         cha: 0,
-        abilities: 'Darkvision, Menacing, Relentless Endurance, Savage Attacks',
-        proficiencies: '',
+        abilities: 'Darkvision, Relentless Endurance (Death prevention on 0 not killed), Savage Attacks (+1 dice on critical)',
+        proficiencies: 'Intimidation',
         armorweapon: '',
         speed: 6
     },
@@ -111,7 +111,7 @@ const Races = {
         int: 1,
         wis: 0,
         cha: 2,
-        abilities: 'Darkvision, Hellish Resistance, Infernal Legacy',
+        abilities: 'Darkvision, Resistance to fire, Infernal Legacy',
         proficiencies: '',
         armorweapon: '',
         speed: 6

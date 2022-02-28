@@ -89,12 +89,26 @@ function generateCommands(state) {
 
 function generateMemo(state) {
     const memos = [];
+    memos.push(`${state.race.name} ${state.class.name}`);
+    memos.push(`Level 1`);
 
+    memos.push("\nRace abilities:");
     const raceAbilities = state.race.abilities.split(',');
     for (const ability of raceAbilities) {
         memos.push(ability.trim());
     }
 
+    memos.push("\nRace proficiencies:");
+    const raceProfs = state.race.proficiencies.split(',');
+    for (const prof of raceProfs) {
+        memos.push(prof.trim());
+    }
+    raceProfs = state.race.armorweapon.split(',');
+    for (const prof of raceProfs) {
+        memos.push(prof.trim());
+    }
+
+    memos.push('\nClass proficiencies:');
     const classProficiencies = state.class.armorweapon.split(',');
     for (const proficiency of classProficiencies) {
         memos.push(proficiency.trim());

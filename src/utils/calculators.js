@@ -49,7 +49,7 @@ function calculateSkillBonuses(skills, character, race, jobclass, background) {
         if (skills.hasOwnProperty(key)) {
             const assocStat = SKILL_STAT_MAP[key];
 
-            const profString = background.skills;
+            const profString = background.skills + ',' + race.proficiencies;
             const proficiencies = profString.split(',');
 
             for (let proficiency of proficiencies) {
