@@ -149,7 +149,7 @@ const App = (props) => {
           </Col>
           <Col md={3} sm={12}>
             <Form.Select aria-label="Background" className="mb-2"
-              onChange={(ev) => dispatch({ type: "background", value: ev.target.value, data: {  } })}>
+              onChange={(ev) => dispatch({ type: "background", value: ev.target.value })}>
               <option>{tr('Background', state.lang)}</option>
               {backgroundOptions}
             </Form.Select>

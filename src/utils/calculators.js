@@ -52,14 +52,14 @@ function calculateSkillBonuses(skills, character, race, jobclass, background) {
             const profString = background.skills + ',' + race.proficiencies;
             const proficiencies = profString.split(',');
 
+            let bonus = calculateAbilityBonus(assocStat, character, race);
             for (let proficiency of proficiencies) {
                 proficiency = proficiency.replace(' ', '').toLowerCase();
-                let bonus = calculateAbilityBonus(assocStat, character, race);
                 if (proficiency === key) {
                     bonus += jobclass.proficiencybonus;
                 }
-                result[key] = bonus;
             }
+            result[key] = bonus;
         }
     }
     return result;
